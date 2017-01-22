@@ -251,7 +251,7 @@ Can you now load another dataset from some CSV file and report some basic statis
 Yes, I can. I have uploaded the file of the Boats case (Boats.csv). I added this piece of code:
 ```{r eval = TRUE, echo=TRUE, comment=NA, warning=FALSE, message=FALSE,results='asis'}
 #This is the answer to the extra question! 
-#I simply want to know how many colums and rows has the file, and the Mean and the StandDev.
+#I simply want to know how many colums and rows has the file, and the Mean and the StandDev of a particular colum.
 myData_boats <- read.csv(file = "boats.csv", header = TRUE, sep=";")
 class(myData_boats)
 dim(myData_boats)
