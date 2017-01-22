@@ -300,7 +300,8 @@ Depending on how you read your .csv file - and how it is stored on your computer
 
 ```{r eval = TRUE, echo=TRUE, error = FALSE, warning=FALSE,message=FALSE,results='asis'}
 myData <- read.csv(file = "twentydays.csv", header = TRUE, sep=",")
-myData_semicolon <- read.csv(file = "twentydays.csv", header = TRUE, sep=";")
+myData_semicolon <- read.csv(file = "newfile.csv", header = TRUE, sep=";")
+nrow(myData_semicolon)
 ```
 
 I get this error: Error in FUN(left, right) : non-numeric argument to binary operator. It looks like we are trying to add two matrices of different length together. 

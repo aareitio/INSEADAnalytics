@@ -238,15 +238,28 @@ myData + StockReturns[1:40,]
 **Your Answers here:**
 <br>
 <br>
+1. When I run the command sum(myData != StockReturns[1:20,]), the console gives me back the number "20".
 <br>
 <br>
-
+2. When I run the command myData + StockReturns[1:40,], I get the following error: "error in FUN(left, right) : non-numeric argument to binary operator". It seems to me that the reasons is that StockReturns[1:20] has 20 rows and StockReturns[1:40,] has 40 rows. So the program can not add them up.
 <hr>
 <hr>
 
 ### Extra Question
 
 Can you now load another dataset from some CSV file and report some basic statistics about that data? 
+Yes, I can. I have uploaded the file of the Boats case (Boats.csv). I added this piece of code:
+```{r eval = TRUE, echo=TRUE, comment=NA, warning=FALSE, message=FALSE,results='asis'}
+#This is the answer to the extra question! 
+#I simply want to know how many colums and rows has the file, and the Mean and the StandDev.
+myData_boats <- read.csv(file = "boats.csv", header = TRUE, sep=";")
+class(myData_boats)
+dim(myData_boats)
+nrow(myData_boats)
+ncol(myData_boats)
+round(100*mean(myData_boats[,2]),3)
+round(100*sd(myData_boats[,2]),3)
+```
 
 <br>
 
@@ -254,7 +267,7 @@ Can you now load another dataset from some CSV file and report some basic statis
 
 Finally, just for fun, one can add some interactivity in the report using [Shiny](http://rmarkdown.rstudio.com/authoring_shiny.html).All one needs to do is set the eval flag of the code chunk below (see the .Rmd file) to "TRUE", add the line "runtime: shiny" at the very begining of the .Rmd file, make the markdown output to be "html_document", and then press "Run Document". 
 
-```{r, eval=FALSE, echo = TRUE}
+```{r, eval=TRUE, echo = TRUE}
 sliderInput("startdate", "Starting Date:", min = 1, max = length(portfolio), 
             value = 1)
 sliderInput("enddate", "End Date:", min = 1, max = length(portfolio), 
