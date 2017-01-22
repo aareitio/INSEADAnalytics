@@ -178,7 +178,7 @@ dim(transposedData) = 2 4037 <br>
 nrow(transposedData) = 2 <br>
 ncol(transposedData) = 4037 <br>
 <br><br>
-2. Yes, I just need to be careful with the Margin (the vector giving the subscripts which the function will be applied over. E.g. 2 indicates columns.)
+2. Yes, I just need to be careful with the Margin (=the vector giving the subscripts which the function will be applied over). (E.g. 2 indicates columns.)
 ```{r eval = FALSE, echo=TRUE}
 transposedData = t(StockReturns)
 portfolio <- t(apply(transposedData, 2, mean)) 
